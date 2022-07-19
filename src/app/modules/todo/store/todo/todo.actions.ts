@@ -7,7 +7,7 @@ export enum todoActionsType {
 
 export class TodoCreateAction implements Action {
   readonly type = todoActionsType.create
-  constructor(public payload: Todo) {
+  constructor(public payload: string) {
 
   }
 }
