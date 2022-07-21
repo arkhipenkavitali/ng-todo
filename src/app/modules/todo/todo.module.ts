@@ -7,12 +7,14 @@ import {RouterModule} from "@angular/router";
 import { TodoWidgetComponent } from './widget/todo-widget/todo-widget.component';
 import { TodoCreateFormComponent } from './ui/todo-create-form/todo-create-form.component';
 import {FormsModule} from "@angular/forms";
+import { TodoListComponent } from './ui/todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
     TodoPageComponent,
     TodoWidgetComponent,
-    TodoCreateFormComponent
+    TodoCreateFormComponent,
+    TodoListComponent
   ],
   imports: [
     CommonModule,
