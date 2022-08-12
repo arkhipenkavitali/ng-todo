@@ -9,14 +9,17 @@ import {Todo} from "../../model/todo";
 export class TodoListComponent implements OnInit {
   @Input() todoList: Todo[] | null = []
   @Output() delete = new EventEmitter<number>()
+  @Output() toggle = new EventEmitter<number>()
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onToggle(event: MouseEvent){
+  onToggle(event: MouseEvent, id: number){
     console.log(event)
+    event.preventDefault();
+    this.toggle.emit(id);
   }
 
   onDelete(id: number){
