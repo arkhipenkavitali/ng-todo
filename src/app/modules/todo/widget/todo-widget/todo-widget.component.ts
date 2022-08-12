@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {select, Store} from "@ngrx/store";
 import {TodoState} from "../../store/todo/todo.reducer";
-import {TodoCreateAction} from "../../store/todo/todo.actions";
+import {TodoCreateAction, TodoDeleteAction} from "../../store/todo/todo.actions";
 import {Todo} from "../../model/todo";
 import {todoListSelector} from "../../store/todo/todo.selectors";
 import {Observable} from "rxjs";
@@ -17,6 +17,10 @@ export class TodoWidgetComponent implements OnInit {
   constructor(private store$: Store<TodoState>) { }
 
   ngOnInit(): void {
+  }
+
+  todoDelete(id: number){
+    this.store$.dispatch(new TodoDeleteAction({id: id}))
   }
 
   onCreateForm(name: string){
