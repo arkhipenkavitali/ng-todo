@@ -8,8 +8,10 @@ import {Todo} from "../../model/todo";
 })
 export class TodoListItemEditComponent implements OnInit {
   name: string = ''
+  @Input() arrIds!: number[]
   @Input() todo!: Todo
-  @Output() edit = new EventEmitter<string>()
+  @Output() edit = new EventEmitter()
+  @Output() isEdit = new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
@@ -25,6 +27,7 @@ export class TodoListItemEditComponent implements OnInit {
 
   onCancel(){
     this.name = this.todo.name
+    this.isEdit.emit()
   }
 
 }

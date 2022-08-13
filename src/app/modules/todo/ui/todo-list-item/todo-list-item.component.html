@@ -3,4 +3,7 @@
   <span *ngIf="!todo.completed">{{todo.name}}</span>
   <del *ngIf="todo.completed">{{todo.name}}</del>
 </label>
+<div (click)="onEdit()">edit</div>
+<br>
 <span (click)="onDelete()">del</span>
+

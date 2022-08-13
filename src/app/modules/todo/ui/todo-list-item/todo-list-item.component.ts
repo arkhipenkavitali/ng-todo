@@ -8,8 +8,9 @@ import {Todo} from "../../model/todo";
 })
 export class TodoListItemComponent implements OnInit {
   @Input() todo!: Todo
-  @Output() delete = new EventEmitter<number>()
-  @Output() toggle = new EventEmitter<number>()
+  @Output() delete = new EventEmitter<void>()
+  @Output() toggle = new EventEmitter<void>()
+  @Output() edit = new EventEmitter<void>()
 
   constructor() { }
 
@@ -24,6 +25,10 @@ export class TodoListItemComponent implements OnInit {
 
   onDelete(){
     this.delete.emit();
+  }
+
+  onEdit(){
+    this.edit.emit()
   }
 
 }
