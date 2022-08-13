@@ -16,9 +16,7 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onToggle(event: MouseEvent, id: number){
-    console.log(event)
-    event.preventDefault();
+  onToggle( id: number){
     this.toggle.emit(id);
   }
 
