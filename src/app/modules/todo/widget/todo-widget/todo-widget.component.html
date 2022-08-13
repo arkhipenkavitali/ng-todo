@@ -1,4 +1,9 @@
 <h1>Todo Widget</h1>
 
 <app-todo-create-form (create)="onCreateForm($event)"></app-todo-create-form>
-<app-todo-list (delete)="todoDelete($event)" (toggle)="todoToggle($event)" [todoList]="todoList$ | async"></app-todo-list>
+<app-todo-list
+  (delete)="todoDelete($event)"
+  (toggle)="todoToggle($event)"
+  (edit)="todoEdit($event)"
+  [todoList]="todoList$ | async"
+></app-todo-list>

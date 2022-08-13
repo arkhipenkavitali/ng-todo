@@ -5,5 +5,6 @@
       (toggle)="onToggle(todo.id)"
       (delete)="onDelete(todo.id)"
     ></app-todo-list-item>
+    <app-todo-list-item-edit [todo]="todo" (edit)="onEdit($event, todo.id)"></app-todo-list-item-edit>
   </li>
 </ul>
