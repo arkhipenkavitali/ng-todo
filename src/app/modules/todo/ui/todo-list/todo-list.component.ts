@@ -10,6 +10,7 @@ export class TodoListComponent implements OnInit {
   @Input() todoList: Todo[] | null = []
   @Output() delete = new EventEmitter<number>()
   @Output() toggle = new EventEmitter<number>()
+  @Output() edit = new EventEmitter<{id: number, name: string}>()
 
   constructor() { }
 
@@ -22,6 +23,10 @@ export class TodoListComponent implements OnInit {
 
   onDelete(id: number){
     this.delete.emit(id);
+  }
+
+  onEdit(name: string, id: number){
+    this.edit.emit({id, name})
   }
 
 }

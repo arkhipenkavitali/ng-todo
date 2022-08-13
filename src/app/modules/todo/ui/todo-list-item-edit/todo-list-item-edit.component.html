@@ -1,1 +1,5 @@
-<p>todo-list-item-edit works!</p>
+<form (ngSubmit)="onEdit()">
+  <input type="text" name="name" [(ngModel)]="name">
+  <button [disabled]="!name">ok</button>
+  <button type="button" (click)="onCancel()">cancel</button>
+</form>
